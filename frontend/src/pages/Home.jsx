@@ -125,48 +125,19 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title text-center">Our Core Technologies</h2>
           <p className="section-subtitle text-center">We leverage a diverse and modern tech stack to build robust and scalable solutions.</p>
-          <div className="tech-logo-grid">
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-              <span>HTML5</span>
+          {Object.entries(stackData).map(([category, technologies]) => (
+            <div key={category} className="tech-category">
+              <h3 className="tech-category-title">{category}</h3>
+              <div className="tech-logo-grid">
+                {technologies.map(tech => (
+                  <div key={tech.name} className="tech-logo-item">
+                    <img src={tech.icon} alt={tech.name} />
+                    <span>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-              <span>CSS3</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-              <span>JavaScript</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-              <span>React</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-              <span>Node.js</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-              <span>MongoDB</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
-              <span>Express</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
-              <span>Next.js</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-              <span>Git</span>
-            </div>
-            <div className="tech-logo-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-              <span>Figma</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

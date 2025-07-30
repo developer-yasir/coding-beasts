@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import PlaceOrder from './pages/PlaceOrder';
 
 import NotFound from './pages/NotFound';
+import Portfolio from './pages/Portfolio';
+import Blog from './pages/Blog';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -39,6 +41,8 @@ function App() {
           
           <Route path="contact" element={<Contact />} />
           <Route path="place-order/:serviceId" element={<PlaceOrder />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
