@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   return (
     <header className="header">
@@ -16,19 +17,28 @@ const Header = () => {
       </div>
       <div className="header-right">
         <div className="header-action">
-          <button className="notification-btn">
-            {/* Add a notification icon here */}
-            <span>Notifications</span>
-          </button>
+          <div className="notification-dropdown">
+            <button onClick={() => setIsNotificationsOpen(!isNotificationsOpen)} className="notification-btn">
+              <i className="fas fa-bell"></i>
+            </button>
+            {isNotificationsOpen && (
+              <div className="dropdown-menu">
+                <div className="dropdown-item">Notification 1</div>
+                <div className="dropdown-item">Notification 2</div>
+                <div className="dropdown-item">Notification 3</div>
+              </div>
+            )}
+          </div>
         </div>
         <div className="header-action">
           <div className="profile-dropdown">
             <button onClick={() => setIsProfileOpen(!isProfileOpen)} className="profile-btn">
-              {/* Add a user avatar here */}
+              <div className="avatar-placeholder"></div>
               <span>User Name</span>
             </button>
             {isProfileOpen && (
               <div className="dropdown-menu">
+                <Link to="/profile" className="dropdown-item">Profile</Link>
                 <Link to="/settings" className="dropdown-item">Settings</Link>
                 <button className="dropdown-item">Logout</button>
               </div>
