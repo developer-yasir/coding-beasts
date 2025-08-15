@@ -1,4 +1,4 @@
-# Coding Beasts - Full-Stack E-commerce Application
+# Coding Beasts - MERN STACK Software Company Website
 
 ## Project Overview
 Coding Beasts is a comprehensive full-stack e-commerce application designed to provide a robust platform for online businesses. It features a user-friendly frontend for customers, a powerful backend for data management, and an intuitive admin dashboard for managing products, orders, users, and more.
